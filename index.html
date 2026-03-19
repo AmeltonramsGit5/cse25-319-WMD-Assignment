@@ -3,73 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendify | Streetwear Collection</title>
+    <title>TRENDIFY // [ARCHIVE_01]</title>
+    <!-- Syne for the aggressive headers, Space Mono for the "Tech/Coded" look -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-dark text-white">
+    
+    <style>
+        /* Inline CSS to handle your specific Pinterest Background */
+        .hero-bg-visual {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('YOUR_PINTEREST_IMAGE_URL'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            filter: grayscale(20%) contrast(110%); /* Adds that "edgy" look */
+        }
+        
+        .huge-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-neon">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">TRENDIFY</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="shopDrop" data-bs-toggle="dropdown">Shop</a>
-                        <ul class="dropdown-menu bg-black">
-                            <li><a class="dropdown-item text-white" href="#">Tops (Hoodies & Tees)</a></li>
-                            <li><a class="dropdown-item text-white" href="#">Bottoms (Cargoes)</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #39FF14; /* Neon Green Outline */
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Top Marquee (Streetwear Essential) -->
+    <div class="bg-neon-green text-black py-2 overflow-hidden border-bottom border-dark">
+        <div class="d-flex whitespace-nowrap fw-bold small">
+            <span class="px-4">TRENDIFY_LABS // DROP_01 IS LIVE // </span>
+            <span class="px-4 text-uppercase">Free Shipping for Gen-Z & Alpha</span>
+            <span class="px-4">TRENDIFY_LABS // DROP_01 IS LIVE // </span>
+        </div>
+    </div>
+
+    <!-- Transparent Navbar -->
+    <nav class="navbar navbar-dark position-absolute w-100 z-3 py-4">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand fw-black fs-2" href="#">TRNDFY.</a>
+            <div class="d-flex gap-4 font-monospace">
+                <a href="#shop" class="text-white text-decoration-none border-bottom border-neon">[ SHOP ]</a>
+                <a href="#" class="text-white text-decoration-none">[ ARCHIVE ]</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section d-flex align-items-center justify-content-center text-center">
-        <div class="container">
-            <h1 class="display-1 fw-black neon-text">NEW DROPS</h1>
-            <p class="lead mb-4">Modern Streetwear for Gen Z & Alpha [cite: 6]</p>
-            <a href="#shop" class="btn btn-neon btn-lg">SHOP NOW</a>
+    <!-- Main Hero with your Background Image -->
+    <section class="hero-bg-visual d-flex align-items-center justify-content-center text-center">
+        <div class="container-fluid">
+            <h1 class="huge-title mb-0">URBAN</h1>
+            <h1 class="huge-title outline-text mb-4">ENERGY</h1>
+            <div class="mt-4">
+                <a href="#shop" class="btn btn-outline-light rounded-0 px-5 py-3 fw-bold tracking-widest">
+                    EXPLORE THE DROP
+                </a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <section id="shop" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Trending Now</h2>
+    <!-- Product Section -->
+    <section id="shop" class="py-5 bg-black">
+        <div class="container-fluid px-5">
+            <div class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-5">
+                <h2 class="font-monospace fs-4">CATALOGUE_V1.0</h2>
+                <span class="text-secondary">SCROLL TO DISCOVER ↓</span>
+            </div>
+            
             <div class="row g-4">
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card border-0 bg-transparent">
-                        <div class="img-container mb-3">
-                            <img src="assets/img/hoodie-black.jpg" class="img-fluid rounded shadow-sm" alt="Black Trendify Hoodie">
+                <div class="col-md-4">
+                    <div class="product-item grayscale-hover">
+                        <img src="assets/img/hoodie.jpg" class="img-fluid border border-secondary p-2" alt="Trendify Hoodie">
+                        <div class="mt-3 font-monospace d-flex justify-content-between">
+                            <span>HOODIE_01</span>
+                            <span class="text-neon-green">$75.00</span>
                         </div>
-                        <h5 class="fw-bold">Oversized Hoodie</h5>
-                        <p class="text-neon">$55.00</p>
                     </div>
                 </div>
-                </div>
+                <!-- Add more items here -->
+            </div>
         </div>
     </section>
 
-    <section id="about" class="py-5 bg-black">
-        <div class="container text-center">
-            <h2 class="mb-4">The Trendify Mission</h2>
-            <p class="mx-auto w-75">Establishing a digital brand identity that resonates with urban culture and high-fashion trends[cite: 3, 14].</p>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-4 border-top border-secondary">
-        <div class="container text-center">
-            <p>&copy; 2026 Trendify. Follow us on Instagram & TikTok[cite: 22].</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
