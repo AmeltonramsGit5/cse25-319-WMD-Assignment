@@ -3,94 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRENDIFY // [ARCHIVE_01]</title>
-    <!-- Syne for the aggressive headers, Space Mono for the "Tech/Coded" look -->
+    <title>TRENDIFY // CORE_COLLECTION</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     
     <style>
-        /* Inline CSS to handle your specific Pinterest Background */
-        .hero-bg-visual {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('YOUR_PINTEREST_IMAGE_URL'); 
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            filter: grayscale(20%) contrast(110%); /* Adds that "edgy" look */
+        /* Specific CSS to mimic the Pinterest aesthetic */
+        :root {
+            --neon: #39FF14; /* Your specific neon accent [cite: 4] */
         }
         
-        .huge-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(4rem, 15vw, 12rem);
-            line-height: 0.8;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
+        .hero-wrap {
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/ba/8c/2a/ba8c2a93910609f7a55c27653a948283.jpg'); /* Direct background link */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .outline-text {
-            color: transparent;
-            -webkit-text-stroke: 1.5px #39FF14; /* Neon Green Outline */
+        /* The "Liquid" Distortion Overlay */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+            backdrop-filter: contrast(120%) brightness(80%);
+        }
+
+        .liquid-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(5rem, 18vw, 15rem);
+            line-height: 0.75;
+            letter-spacing: -0.08em;
+            mix-blend-mode: difference; /* This creates the "inverted" look seen in streetwear design */
+        }
+
+        .brutal-border {
+            border: 2px solid var(--neon);
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .brutal-border:hover {
+            background: var(--neon);
+            color: black;
+            box-shadow: 0 0 20px var(--neon);
         }
     </style>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white font-monospace">
 
-    <!-- Top Marquee (Streetwear Essential) -->
-    <div class="bg-neon-green text-black py-2 overflow-hidden border-bottom border-dark">
-        <div class="d-flex whitespace-nowrap fw-bold small">
-            <span class="px-4">TRENDIFY_LABS // DROP_01 IS LIVE // </span>
-            <span class="px-4 text-uppercase">Free Shipping for Gen-Z & Alpha</span>
-            <span class="px-4">TRENDIFY_LABS // DROP_01 IS LIVE // </span>
-        </div>
-    </div>
-
-    <!-- Transparent Navbar -->
-    <nav class="navbar navbar-dark position-absolute w-100 z-3 py-4">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand fw-black fs-2" href="#">TRNDFY.</a>
-            <div class="d-flex gap-4 font-monospace">
-                <a href="#shop" class="text-white text-decoration-none border-bottom border-neon">[ SHOP ]</a>
-                <a href="#" class="text-white text-decoration-none">[ ARCHIVE ]</a>
+    <nav class="navbar navbar-dark fixed-top p-4 z-3">
+        <div class="container-fluid border-bottom border-secondary pb-3">
+            <a class="navbar-brand fw-black fs-1 tracking-tighter" href="index.html">TRNDFY_</a>
+            <div class="d-flex gap-5">
+                <a href="#shop" class="nav-link text-neon fw-bold small">[ DROP_01 ]</a>
+                <a href="#about" class="nav-link small">[ THE_MISSION ]</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Hero with your Background Image -->
-    <section class="hero-bg-visual d-flex align-items-center justify-content-center text-center">
-        <div class="container-fluid">
-            <h1 class="huge-title mb-0">URBAN</h1>
-            <h1 class="huge-title outline-text mb-4">ENERGY</h1>
+    <section class="hero-wrap d-flex align-items-center justify-content-center">
+        <div class="hero-overlay"></div>
+        <div class="container-fluid text-center z-2">
+            <h1 class="liquid-title mb-0">TREND</h1>
+            <h1 class="liquid-title text-neon mb-5">IFY</h1>
             <div class="mt-4">
-                <a href="#shop" class="btn btn-outline-light rounded-0 px-5 py-3 fw-bold tracking-widest">
-                    EXPLORE THE DROP
+                <a href="#shop" class="brutal-border text-white text-decoration-none fw-bold tracking-widest">
+                    ENTER_THE_VOID
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Product Section -->
     <section id="shop" class="py-5 bg-black">
         <div class="container-fluid px-5">
-            <div class="d-flex justify-content-between border-bottom border-secondary pb-3 mb-5">
-                <h2 class="font-monospace fs-4">CATALOGUE_V1.0</h2>
-                <span class="text-secondary">SCROLL TO DISCOVER ↓</span>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="product-item grayscale-hover">
-                        <img src="assets/img/hoodie.jpg" class="img-fluid border border-secondary p-2" alt="Trendify Hoodie">
-                        <div class="mt-3 font-monospace d-flex justify-content-between">
-                            <span>HOODIE_01</span>
-                            <span class="text-neon-green">$75.00</span>
-                        </div>
+            <div class="row g-0">
+                <div class="col-md-6 border border-secondary p-5">
+                    <h3 class="display-6 fw-bold mb-4">01_TOPS</h3>
+                    <div class="product-card">
+                        <img src="assets/img/hoodie.jpg" class="img-fluid grayscale filter-neon" alt="Streetwear Hoodie">
                     </div>
                 </div>
-                <!-- Add more items here -->
+                <div class="col-md-6 border border-secondary p-5">
+                    <h3 class="display-6 fw-bold mb-4">02_BOTTOMS</h3>
+                    <div class="product-card">
+                        <img src="assets/img/cargoes.jpg" class="img-fluid grayscale" alt="Streetwear Cargoes">
+                        <p class="mt-3 fs-5">CARGO_SYSTEM_01 // <span class="text-neon">$120</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
