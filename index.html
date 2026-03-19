@@ -137,7 +137,22 @@ p {
 <!-- SHOP -->
 <div id="shop" class="section">
   <h1>Shop</h1>
+
+  <!-- Category Buttons -->
   <div class="grid">
+    <div class="card category" onclick="showCategory('men')">MEN</div>
+    <div class="card category" onclick="showCategory('women')">WOMEN</div>
+  </div>
+
+  <!-- MEN Products -->
+  <div id="men" class="grid category-products" style="display:none; margin-top:20px;">
+    <div class="card">Hoodies</div>
+    <div class="card">Tees</div>
+    <div class="card">Joggers</div>
+  </div>
+
+  <!-- WOMEN Products -->
+  <div id="women" class="grid category-products" style="display:none; margin-top:20px;">
     <div class="card">Hoodies</div>
     <div class="card">Tees</div>
     <div class="card">Joggers</div>
