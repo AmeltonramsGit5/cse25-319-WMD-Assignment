@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trendify</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
 <style>
 * {
   margin: 0;
@@ -16,12 +14,12 @@
 
 body {
   height: 100vh;
-  overflow: hidden;
+  overflow: hidden; /* no scroll */
   background: #000;
   color: #fff;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
   position: absolute;
   width: 100%;
@@ -29,6 +27,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 25px 50px;
+  z-index: 10;
 }
 
 .logo {
@@ -44,6 +43,7 @@ nav {
 .nav-links span {
   cursor: pointer;
   color: #aaa;
+  transition: 0.3s;
 }
 
 .nav-links span:hover {
@@ -55,17 +55,15 @@ nav {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none; /* hide by default */
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  opacity: 0;
-  transition: 0.5s;
 }
 
 .active {
-  opacity: 1;
+  display: flex; /* show active section */
 }
 
 /* TEXT */
@@ -102,29 +100,6 @@ p {
   transform: translateY(-10px);
 }
 
-/* 🔥 HOODIE BACKGROUND */
-.hoodie {
-  background: url('YOUR-IMAGE-LINK-HERE') center/cover no-repeat;
-  position: relative;
-}
-
-/* DARK OVERLAY FOR READABILITY */
-.hoodie::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
-  border-radius: 12px;
-}
-
-.hoodie span {
-  position: relative;
-  z-index: 2;
-}
-
 /* BUTTON */
 .btn {
   margin-top: 25px;
@@ -139,10 +114,8 @@ p {
   background: white;
   color: black;
 }
-
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -165,9 +138,9 @@ p {
 <div id="shop" class="section">
   <h1>Shop</h1>
   <div class="grid">
-    <div class="card hoodie"><span>Hoodies</span></div>
-    <div class="card"><span>Tees</span></div>
-    <div class="card"><span>Joggers</span></div>
+    <div class="card">Hoodies</div>
+    <div class="card">Tees</div>
+    <div class="card">Joggers</div>
   </div>
 </div>
 
