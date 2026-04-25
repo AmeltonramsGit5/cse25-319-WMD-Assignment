@@ -21,32 +21,25 @@
             height: 100vh;
         }
 
-        /* main app container - no scrollbars */
+        /* main app container - full page */
         .app-scroll {
             height: 100vh;
-            overflow-y: auto;
+            overflow-y: hidden;
             overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        .app-scroll::-webkit-scrollbar {
-            width: 0;
-            background: transparent;
+            display: flex;
+            flex-direction: column;
         }
 
         /* navbar - clean dark */
         .navbar {
             background: #0a0a0a;
-            padding: 1rem 2rem;
+            padding: 0.7rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
+            flex-shrink: 0;
         }
 
         .logo h1 {
@@ -56,25 +49,24 @@
             color: transparent;
             font-weight: 800;
             letter-spacing: -0.5px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
             align-items: center;
         }
 
         .nav-btn {
             background: none;
             border: none;
-            color: #f0f0f0;
-            font-size: 1rem;
+            color: #ffffff;
+            font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            padding: 0.4rem 0;
-            position: relative;
+            padding: 0.3rem 0;
         }
 
         .nav-btn:hover {
@@ -87,13 +79,37 @@
             border-bottom: 2px solid #FFD700;
         }
 
+        /* back button - just an arrow */
+        .back-button {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .back-button:hover {
+            background: #FFD700;
+            color: #000;
+            border-color: #FFD700;
+            transform: translateX(-3px);
+        }
+
         /* cart icon */
         .cart-icon {
             position: relative;
             cursor: pointer;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #FFD700;
             transition: transform 0.2s ease;
         }
@@ -109,58 +125,60 @@
             background: #FFD700;
             color: #000;
             border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            font-size: 0.65rem;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* page container */
+        /* page container - flex column to push footer to bottom */
         .page {
             display: none;
-            padding: 2rem 2rem 3rem;
-            max-width: 1400px;
+            flex: 1;
+            flex-direction: column;
+            padding: 1.2rem 2rem 0;
+            max-width: 1200px;
             margin: 0 auto;
-            animation: fadeUp 0.4s ease-out;
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        .page::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
         }
 
         .active-page {
-            display: block;
+            display: flex;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* content wrapper takes remaining space, footer stays at bottom */
+        .page-content {
+            flex: 1;
         }
 
         /* hero section */
         .hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
-            border-radius: 2rem;
-            padding: 3.5rem 2rem;
+            border-radius: 1.5rem;
+            padding: 1.2rem 2rem;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             border: 1px solid #2a2a2a;
             transition: all 0.3s ease;
         }
 
         .hero:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 35px rgba(255, 215, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 215, 0, 0.1);
             border-color: #FFD70040;
         }
 
         .hero h2 {
-            font-size: 3.2rem;
+            font-size: 2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FFD700, #FF8C00);
             -webkit-background-clip: text;
@@ -169,49 +187,46 @@
         }
 
         .hero p {
-            margin: 1rem 0;
+            margin: 0.4rem 0;
             opacity: 0.85;
-            font-size: 1.1rem;
+            font-size: 0.85rem;
+            color: #ffffff;
         }
 
         .btn-gold {
             background: linear-gradient(135deg, #FFD700, #FF8C00);
             border: none;
-            padding: 12px 32px;
+            padding: 7px 22px;
             border-radius: 40px;
             font-weight: 700;
             color: #000;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
         }
 
         .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
         }
 
         /* gender toggle */
         .gender-row {
             display: flex;
-            gap: 1rem;
-            margin: 1rem 0 2rem;
+            gap: 0.8rem;
+            margin: 0.8rem 0 1.2rem;
         }
 
         .gender-btn {
             background: #1a1a1a;
             border: 1px solid #333;
-            padding: 10px 28px;
+            padding: 6px 20px;
             border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
-            color: #fff;
+            color: #ffffff;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
-        }
-
-        .gender-btn:hover {
-            background: #333;
-            transform: translateY(-2px);
         }
 
         .gender-active {
@@ -223,25 +238,21 @@
         /* filters */
         .filter-row {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 1.2rem;
         }
 
         .filter-chip {
             background: #1a1a1a;
             border: 1px solid #333;
-            padding: 8px 20px;
+            padding: 5px 16px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 500;
-            color: #fff;
+            color: #ffffff;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
-        }
-
-        .filter-chip:hover {
-            background: #333;
-            transform: translateY(-2px);
         }
 
         .filter-chip.active-filter {
@@ -250,19 +261,20 @@
             border-color: #FFD700;
         }
 
-        /* product grid - 3 items max on home to avoid scroll */
+        /* product grid - shop page */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.8rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1rem 0;
         }
 
+        /* LATEST DROPS GRID - 2 rows x 4 columns */
         .home-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin: 1rem 0;
         }
 
         @media (max-width: 900px) {
@@ -271,7 +283,7 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             .home-grid {
                 grid-template-columns: 1fr;
             }
@@ -279,65 +291,63 @@
 
         .product-card {
             background: #0f0f0f;
-            border-radius: 1.5rem;
+            border-radius: 1rem;
             border: 1px solid #222;
             transition: all 0.3s ease;
             overflow: hidden;
         }
 
         .product-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-5px) scale(1.01);
             border-color: #FFD700;
-            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.12);
         }
 
         .product-img {
             background: #1a1a1a;
-            height: 220px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: #FFD700;
             transition: all 0.3s ease;
         }
 
-        .product-card:hover .product-img {
-            background: #222;
-        }
-
         .product-info {
-            padding: 1rem;
+            padding: 0.7rem;
         }
 
         .product-title {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            color: #ffffff;
         }
 
         .product-category {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: #FFD700;
             text-transform: uppercase;
-            margin: 4px 0;
-            letter-spacing: 1px;
+            margin: 3px 0;
+            letter-spacing: 0.5px;
         }
 
         .product-price {
             font-weight: 800;
             color: #FFD700;
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
         }
 
         .add-cart-btn {
             background: #FFD700;
             width: 100%;
             border: none;
-            padding: 10px;
+            padding: 7px;
             border-radius: 40px;
             color: #000;
             font-weight: 700;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -350,87 +360,50 @@
         /* about section */
         .about-card {
             background: #0f0f0f;
-            border-radius: 2rem;
-            padding: 2rem;
-            line-height: 1.7;
-            margin-top: 1rem;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            line-height: 1.5;
+            margin-top: 0.5rem;
             border: 1px solid #222;
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
         }
 
-        .about-card:hover {
-            border-color: #FFD700;
-            transform: translateY(-5px);
+        .about-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
         /* contact page */
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 1.2rem;
+            margin-top: 1rem;
         }
 
-        .social-links {
-            flex: 1;
+        .social-links, .inquiry-form {
             background: #0f0f0f;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
+            border-radius: 1.2rem;
+            padding: 1rem;
             border: 1px solid #222;
-            transition: all 0.3s ease;
-        }
-
-        .social-links:hover {
-            border-color: #FFD700;
-            transform: translateY(-5px);
         }
 
         .social-icons {
             display: flex;
-            gap: 1.8rem;
-            margin: 1rem 0;
-            font-size: 2rem;
-        }
-
-        .social-icons a {
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .inquiry-form {
-            flex: 1.5;
-            background: #0f0f0f;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid #222;
-            transition: all 0.3s ease;
-        }
-
-        .inquiry-form:hover {
-            border-color: #FFD700;
+            gap: 1.2rem;
+            margin: 0.6rem 0;
+            font-size: 1.5rem;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 12px;
-            margin: 8px 0;
+            padding: 8px;
+            margin: 5px 0;
             border: 1px solid #333;
             border-radius: 30px;
-            font-family: inherit;
+            font-size: 0.8rem;
             background: #1a1a1a;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+            color: #ffffff;
         }
 
         /* modal */
@@ -459,72 +432,68 @@
         .modal-card {
             background: #0f0f0f;
             width: 90%;
-            max-width: 550px;
+            max-width: 500px;
             max-height: 85vh;
-            border-radius: 2rem;
-            padding: 1.5rem;
+            border-radius: 1.2rem;
+            padding: 1rem;
             overflow-y: auto;
             border: 1px solid #333;
-        }
-
-        .modal-card::-webkit-scrollbar {
-            width: 0;
         }
 
         .cart-item {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid #222;
-            padding: 12px 0;
+            padding: 8px 0;
+            font-size: 0.85rem;
         }
 
         .removeCartItem {
             background: #FFD700;
             border: none;
             border-radius: 30px;
-            padding: 5px 12px;
+            padding: 4px 10px;
+            font-size: 0.7rem;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .removeCartItem:hover {
-            background: #FF8C00;
-            transform: scale(0.95);
         }
 
         .toast {
             position: fixed;
-            bottom: 25px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: #FFD700;
             color: #000;
-            padding: 12px 28px;
+            padding: 8px 20px;
             border-radius: 50px;
             z-index: 1100;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             opacity: 0;
             transition: 0.2s;
             pointer-events: none;
         }
 
-        .footer {
+        /* FOOTER - at far bottom */
+        .page-footer {
             text-align: center;
             border-top: 1px solid #1a1a1a;
-            margin-top: 3rem;
-            padding: 1.8rem;
-            font-size: 0.8rem;
-            color: #888;
+            margin-top: 2rem;
+            padding: 1rem;
+            font-size: 0.7rem;
+            color: #666;
+            flex-shrink: 0;
         }
 
-        button {
-            cursor: pointer;
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
 
-        h2, h3, h4 {
-            letter-spacing: -0.3px;
+        p {
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -542,100 +511,114 @@
         </div>
     </div>
 
-    <!-- HOME -->
+    <!-- HOME PAGE - 4 up and 4 down grid -->
     <div id="home-page" class="page active-page">
-        <div class="hero">
-            <h2>VIEW CATALOG</h2>
-            <p>Fresh drops. Bold fits. Define your edge.</p>
-            <button class="btn-gold" id="viewCatalogBtn">Shop Now →</button>
+        <div class="page-content">
+            <div class="hero">
+                <h2>VIEW CATALOG</h2>
+                <p>Fresh drops. Bold fits. Define your edge.</p>
+                <button class="btn-gold" id="viewCatalogBtn">Shop Now →</button>
+            </div>
+            <h3>🔥 Latest Drops</h3>
+            <div class="home-grid" id="homeFeaturedGrid"></div>
         </div>
-        <h3 style="margin-bottom: 1rem;">🔥 Latest Drops</h3>
-        <div class="home-grid" id="homeFeaturedGrid"></div>
+        <div class="page-footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
     </div>
 
-    <!-- SHOP -->
+    <!-- SHOP PAGE -->
     <div id="shop-page" class="page">
-        <div class="gender-row">
-            <button class="gender-btn gender-active" data-gender="men">MEN</button>
-            <button class="gender-btn" data-gender="women">WOMEN</button>
+        <div class="page-content">
+            <button class="back-button" id="shopBackBtn"><i class="fas fa-arrow-left"></i></button>
+            <div class="gender-row">
+                <button class="gender-btn gender-active" data-gender="men">MEN</button>
+                <button class="gender-btn" data-gender="women">WOMEN</button>
+            </div>
+            <div class="filter-row">
+                <button class="filter-chip active-filter" data-cat="all">ALL</button>
+                <button class="filter-chip" data-cat="tops">TOPS</button>
+                <button class="filter-chip" data-cat="bottoms">BOTTOMS</button>
+            </div>
+            <div id="shopProductsContainer" class="products-grid"></div>
         </div>
-        <div class="filter-row">
-            <button class="filter-chip active-filter" data-cat="all">ALL</button>
-            <button class="filter-chip" data-cat="tops">TOPS</button>
-            <button class="filter-chip" data-cat="bottoms">BOTTOMS</button>
-        </div>
-        <div id="shopProductsContainer" class="products-grid"></div>
+        <div class="page-footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT PAGE -->
     <div id="about-page" class="page">
-        <div class="about-card">
-            <h2>The History of Trendify</h2>
-            <p style="margin-top: 1rem;">Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant and jogger tells a story of rebellion and self-expression.</p>
-            <p style="margin-top: 1rem;">Today, Trendify is worn by artists, athletes and dreamers who refuse to blend in. Join the culture.</p>
+        <div class="page-content">
+            <button class="back-button" id="aboutBackBtn"><i class="fas fa-arrow-left"></i></button>
+            <div class="about-card">
+                <h2>The History of Trendify</h2>
+                <p>Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant and jogger tells a story of rebellion.</p>
+                <p style="margin-top: 0.8rem;">Today, Trendify is worn by artists, athletes and dreamers who refuse to blend in. Join the culture.</p>
+            </div>
         </div>
+        <div class="page-footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
     </div>
 
-    <!-- CONTACT -->
+    <!-- CONTACT PAGE -->
     <div id="contact-page" class="page">
-        <h2>Contact Us</h2>
-        <p style="margin-bottom: 1rem;">We'd love to hear from you — hit us up.</p>
-        <div class="contact-grid">
-            <div class="social-links">
-                <h3>Social Media</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
+        <div class="page-content">
+            <button class="back-button" id="contactBackBtn"><i class="fas fa-arrow-left"></i></button>
+            <h2 style="font-size: 1.3rem;">Contact Us</h2>
+            <p style="margin-bottom: 0.8rem; font-size: 0.85rem;">We'd love to hear from you — hit us up.</p>
+            <div class="contact-grid">
+                <div class="social-links">
+                    <h3 style="font-size: 1rem;">Social Media</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <p><i class="fas fa-envelope"></i> support@trendify.com</p>
+                        <p><i class="fas fa-phone-alt"></i> (+267) 74276320</p>
+                    </div>
                 </div>
-                <div style="margin-top: 1.5rem;">
-                    <p><i class="fas fa-envelope"></i> support@trendify.com</p>
-                    <p><i class="fas fa-phone-alt"></i> (+267) 74276320</p>
+                <div class="inquiry-form">
+                    <h3 style="font-size: 1rem;">Inquiry Form</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea rows="2" placeholder="Message"></textarea>
+                        <button type="submit" class="btn-gold" style="width:100%; margin-top: 5px;">SEND MESSAGE</button>
+                    </form>
                 </div>
-            </div>
-            <div class="inquiry-form">
-                <h3>Inquiry Form</h3>
-                <form id="contactForm">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Subject">
-                    <textarea rows="3" placeholder="Message"></textarea>
-                    <button type="submit" class="btn-gold" style="width:100%;">SEND MESSAGE</button>
-                </form>
             </div>
         </div>
+        <div class="page-footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
     </div>
 
-    <!-- CART MODAL with shipping & payment -->
+    <!-- CART MODAL -->
     <div id="cartModal" class="modal">
         <div class="modal-card">
             <h3>Your Bag 🛍️</h3>
             <div id="cartItemsList"></div>
-            <div id="cartTotalAmount" style="font-weight: bold; font-size: 1.3rem; text-align: right; margin: 1rem 0;">Total: P0.00</div>
-            <div style="border-top: 1px solid #222; padding-top: 1rem;">
-                <h4>Shipping Details</h4>
+            <div id="cartTotalAmount" style="font-weight: bold; font-size: 1.1rem; text-align: right; margin: 0.8rem 0; color: #FFD700;">Total: P0.00</div>
+            <div style="border-top: 1px solid #222; padding-top: 0.8rem;">
+                <h4 style="font-size: 0.95rem;">Shipping Details</h4>
                 <input type="text" id="shipName" placeholder="Full name">
                 <input type="text" id="shipAddress" placeholder="Street address">
                 <input type="text" id="shipCity" placeholder="City">
                 <input type="text" id="shipPhone" placeholder="Phone number">
-                <h4 style="margin-top: 12px;">Payment</h4>
+                <h4 style="margin-top: 8px; font-size: 0.95rem;">Payment</h4>
                 <select id="paymentSelect">
                     <option value="Mobile Money">Mobile Money (Pula)</option>
                     <option value="Credit Card">Credit Card</option>
                     <option value="Cash on Delivery">Cash on Delivery</option>
                 </select>
-                <button id="completeOrderBtn" class="btn-gold" style="width:100%; margin-top: 1rem;">Complete Order (Pula)</button>
-                <button id="closeModalBtn" style="margin-top: 10px; background:#2a2a2a; border:none; padding: 8px; border-radius:40px; width:100%; color:#fff; transition:0.2s;">Close</button>
+                <button id="completeOrderBtn" class="btn-gold" style="width:100%; margin-top: 0.8rem;">Complete Order (Pula)</button>
+                <button id="closeModalBtn" style="margin-top: 8px; background:#2a2a2a; border:none; padding: 6px; border-radius:40px; width:100%; color:#fff;">Close</button>
             </div>
         </div>
     </div>
     <div id="toastMsg" class="toast">✨ Added</div>
-    <div class="footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
 </div>
 
 <script>
-    // PRODUCTS - fresh, urban, no Tswana names, Pula currency
+    // PRODUCTS
     const menProducts = [
         { id: 1, name: "Oversized Hoodie", price: 549, category: "tops", typeLabel: "Hoodie", gender: "men", icon: "fa-tshirt" },
         { id: 2, name: "Cyberpunk Graphic Tee", price: 299, category: "tops", typeLabel: "Graphic Tee", gender: "men", icon: "fa-tshirt" },
@@ -652,7 +635,9 @@
         { id: 103, name: "Wide Cargo Pants", price: 579, category: "bottoms", typeLabel: "Cargos", gender: "women", icon: "fa-shopping-bag" },
         { id: 104, name: "High-Waist Joggers", price: 459, category: "bottoms", typeLabel: "Joggers", gender: "women", icon: "fa-shopping-bag" },
         { id: 105, name: "Zip-Up Hoodie", price: 529, category: "tops", typeLabel: "Zip Hoodie", gender: "women", icon: "fa-female" },
-        { id: 106, name: "Streetwear Tee", price: 269, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female" }
+        { id: 106, name: "Streetwear Tee", price: 269, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female" },
+        { id: 107, name: "Denim Jacket", price: 699, category: "tops", typeLabel: "Jacket", gender: "women", icon: "fa-female" },
+        { id: 108, name: "Puffer Vest", price: 649, category: "tops", typeLabel: "Outerwear", gender: "women", icon: "fa-female" }
     ];
 
     let cart = [];
@@ -663,7 +648,7 @@
         const toast = document.getElementById('toastMsg');
         toast.innerText = msg;
         toast.style.opacity = "1";
-        setTimeout(() => toast.style.opacity = "0", 2000);
+        setTimeout(() => toast.style.opacity = "0", 1800);
     }
 
     function updateCartUI() {
@@ -673,12 +658,12 @@
         document.getElementById('cartCountBadge').innerText = itemCount;
         document.getElementById('cartTotalAmount').innerText = `Total: P${total.toFixed(2)}`;
         if (cart.length === 0) {
-            cartContainer.innerHTML = '<div style="text-align:center; padding:1rem;">Cart is empty</div>';
+            cartContainer.innerHTML = '<div style="text-align:center; padding:0.8rem; color:#888;">Cart is empty</div>';
         } else {
             cartContainer.innerHTML = cart.map(item => `
                 <div class="cart-item">
                     <div><strong>${item.name}</strong><br>P${item.price} x ${item.quantity}</div>
-                    <button class="removeCartItem" data-id="${item.id}" style="background:#FFD700; border:none; border-radius:30px; padding:5px 12px; font-weight:600;">Remove</button>
+                    <button class="removeCartItem" data-id="${item.id}">Remove</button>
                 </div>
             `).join('');
             document.querySelectorAll('.removeCartItem').forEach(btn => {
@@ -741,11 +726,16 @@
     }
 
     function renderHomeFeatured() {
-        // ONLY 3 ITEMS to avoid auto-scroll - fresh picks
+        // 8 products - 4 up and 4 down in grid
         const freshPicks = [
-            menProducts[0],  // Oversized Hoodie
+            menProducts[0],   // Oversized Hoodie
             womenProducts[1], // Y2K Graphic Tee
-            menProducts[2]   // Cargo Pants
+            menProducts[2],   // Cargo Pants
+            womenProducts[3], // High-Waist Joggers
+            menProducts[4],   // Drop Shoulder Hoodie
+            womenProducts[5], // Streetwear Tee
+            menProducts[6],   // Utility Cargos
+            womenProducts[6]  // Denim Jacket
         ];
         const homeGrid = document.getElementById('homeFeaturedGrid');
         homeGrid.innerHTML = freshPicks.map(p => `
@@ -771,8 +761,6 @@
             if (btn.getAttribute('data-page') === pageId) btn.classList.add('active');
             else btn.classList.remove('active');
         });
-        const scrollDiv = document.getElementById('appScroll');
-        if (scrollDiv) scrollDiv.scrollTop = 0;
         if (pageId === 'shop') renderShop();
         if (pageId === 'home') renderHomeFeatured();
     }
@@ -792,7 +780,7 @@
         }
         const total = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
         const payment = document.getElementById('paymentSelect').value;
-        showToast(`✅ Order placed! Total: P${total.toFixed(2)} via ${payment}. Thanks ${name}, we'll ship to ${address}, ${city}.`);
+        showToast(`✅ Order placed! Total: P${total.toFixed(2)} via ${payment}. Thanks ${name}!`);
         cart = [];
         updateCartUI();
         document.getElementById('cartModal').classList.remove('open');
@@ -809,6 +797,10 @@
             if (page) showPage(page);
         });
     });
+    
+    document.getElementById('shopBackBtn')?.addEventListener('click', () => showPage('home'));
+    document.getElementById('aboutBackBtn')?.addEventListener('click', () => showPage('home'));
+    document.getElementById('contactBackBtn')?.addEventListener('click', () => showPage('home'));
     document.getElementById('viewCatalogBtn')?.addEventListener('click', () => showPage('shop'));
     document.querySelectorAll('.gender-btn').forEach(btn => {
         btn.addEventListener('click', () => updateGender(btn.getAttribute('data-gender')));
