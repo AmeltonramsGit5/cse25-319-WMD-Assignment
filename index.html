@@ -569,8 +569,8 @@
       const featured = [...menProducts.slice(0,4), ...womenProducts.slice(0,4)];
       const homeGrid = document.getElementById('home-featured');
       if (homeGrid) {
-        homeGrid.innerHTML = featured.map(p => `<div class="product-card"><div class="product-img"><i class="fas ${p.icon}"></i></div><div class="product-info"><div class="product-title">${p.name}</div><div class="product-price">$${p.price}</div><button class="add-to-cart-btn" data-id="${p.id}">Add to Cart</button></div></div>`).join('');
-        featured.forEach(p => { const btn = homeGrid.querySelector(`.add-to-cart-btn[data-id="${p.id}"]`); if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); addToCart(p); }); });
+        homeGrid.innerHTML = featured.map(p => `<div class="product-card"><div class="product-img"><i class="fas P{p.icon}"></i></div><div class="product-info"><div class="product-title">P{p.name}</div><div class="product-price">$${p.price}</div><button class="add-to-cart-btn" data-id="${p.id}">Add to Cart</button></div></div>`).join('');
+        featured.forEach(p => { const btn = homeGrid.querySelector(`.add-to-cart-btn[data-id="P{p.id}"]`); if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); addToCart(p); }); });
       }
     }
   }
