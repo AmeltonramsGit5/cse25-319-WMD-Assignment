@@ -250,12 +250,31 @@
             border-color: #FFD700;
         }
 
-        /* product grid */
+        /* product grid - 3 items max on home to avoid scroll */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.8rem;
             margin: 1.5rem 0;
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 900px) {
+            .home-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .home-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .product-card {
@@ -531,7 +550,7 @@
             <button class="btn-gold" id="viewCatalogBtn">Shop Now →</button>
         </div>
         <h3 style="margin-bottom: 1rem;">🔥 Latest Drops</h3>
-        <div class="products-grid" id="homeFeaturedGrid"></div>
+        <div class="home-grid" id="homeFeaturedGrid"></div>
     </div>
 
     <!-- SHOP -->
@@ -552,7 +571,7 @@
     <div id="about-page" class="page">
         <div class="about-card">
             <h2>The History of Trendify</h2>
-            <p style="margin-top: 1rem;">Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant, and jogger tells a story of rebellion and self-expression.</p>
+            <p style="margin-top: 1rem;">Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant and jogger tells a story of rebellion and self-expression.</p>
             <p style="margin-top: 1rem;">Today, Trendify is worn by artists, athletes and dreamers who refuse to blend in. Join the culture.</p>
         </div>
     </div>
@@ -560,7 +579,7 @@
     <!-- CONTACT -->
     <div id="contact-page" class="page">
         <h2>Contact Us</h2>
-        <p style="margin-bottom: 1rem;">We'd love to hear from you. Hit us up.</p>
+        <p style="margin-bottom: 1rem;">We'd love to hear from you — hit us up.</p>
         <div class="contact-grid">
             <div class="social-links">
                 <h3>Social Media</h3>
@@ -722,9 +741,14 @@
     }
 
     function renderHomeFeatured() {
-        const mix = [...menProducts.slice(0, 3), ...womenProducts.slice(0, 3)];
+        // ONLY 3 ITEMS to avoid auto-scroll - fresh picks
+        const freshPicks = [
+            menProducts[0],  // Oversized Hoodie
+            womenProducts[1], // Y2K Graphic Tee
+            menProducts[2]   // Cargo Pants
+        ];
         const homeGrid = document.getElementById('homeFeaturedGrid');
-        homeGrid.innerHTML = mix.map(p => `
+        homeGrid.innerHTML = freshPicks.map(p => `
             <div class="product-card">
                 <div class="product-img"><i class="fas ${p.icon}"></i></div>
                 <div class="product-info">
@@ -734,7 +758,7 @@
                 </div>
             </div>
         `).join('');
-        mix.forEach(p => {
+        freshPicks.forEach(p => {
             const btn = homeGrid.querySelector(`.add-cart-btn[data-id="${p.id}"]`);
             if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); addToCart(p); });
         });
