@@ -21,7 +21,6 @@
             height: 100vh;
         }
 
-        /* main app container - full page */
         .app-scroll {
             height: 100vh;
             overflow-y: hidden;
@@ -30,7 +29,6 @@
             flex-direction: column;
         }
 
-        /* navbar - clean dark */
         .navbar {
             background: #0a0a0a;
             padding: 0.7rem 2rem;
@@ -79,7 +77,6 @@
             border-bottom: 2px solid #FFD700;
         }
 
-        /* back button - just an arrow */
         .back-button {
             background: #1a1a1a;
             border: 1px solid #333;
@@ -103,7 +100,6 @@
             transform: translateX(-3px);
         }
 
-        /* cart icon */
         .cart-icon {
             position: relative;
             cursor: pointer;
@@ -134,7 +130,6 @@
             justify-content: center;
         }
 
-        /* page container - flex column to push footer to bottom */
         .page {
             display: none;
             flex: 1;
@@ -155,12 +150,10 @@
             display: flex;
         }
 
-        /* content wrapper takes remaining space, footer stays at bottom */
         .page-content {
             flex: 1;
         }
 
-        /* hero section */
         .hero {
             background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
             border-radius: 1.5rem;
@@ -210,7 +203,6 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
         }
 
-        /* gender toggle */
         .gender-row {
             display: flex;
             gap: 0.8rem;
@@ -235,7 +227,6 @@
             border-color: #FFD700;
         }
 
-        /* filters */
         .filter-row {
             display: flex;
             gap: 0.8rem;
@@ -261,7 +252,6 @@
             border-color: #FFD700;
         }
 
-        /* product grid - shop page */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -269,7 +259,6 @@
             margin: 1rem 0;
         }
 
-        /* LATEST DROPS GRID - 2 rows x 4 columns */
         .home-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -305,13 +294,23 @@
 
         .product-img {
             background: #1a1a1a;
-            height: 160px;
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.8rem;
+            font-size: 4rem;
             color: #FFD700;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img i, .product-img span {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .product-card:hover .product-img {
+            background: #252525;
         }
 
         .product-info {
@@ -357,23 +356,42 @@
             transform: scale(0.98);
         }
 
-        /* about section */
         .about-card {
-            background: #0f0f0f;
-            border-radius: 1.2rem;
-            padding: 1.2rem;
-            line-height: 1.5;
-            margin-top: 0.5rem;
-            border: 1px solid #222;
-            font-size: 0.85rem;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            border-radius: 2rem;
+            padding: 3rem 2.5rem;
+            line-height: 1.8;
+            margin: 2rem auto;
+            border: 1px solid #FFD70030;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            max-width: 800px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .about-card:hover {
+            border-color: #FFD700;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
         }
 
         .about-card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        /* contact page */
+        .about-card p {
+            font-size: 1.05rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
@@ -395,6 +413,15 @@
             font-size: 1.5rem;
         }
 
+        .social-icons a {
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #FFD700;
+        }
+
         input, textarea, select {
             width: 100%;
             padding: 8px;
@@ -406,7 +433,6 @@
             color: #ffffff;
         }
 
-        /* modal */
         .modal {
             position: fixed;
             top: 0;
@@ -475,7 +501,6 @@
             pointer-events: none;
         }
 
-        /* FOOTER - at far bottom */
         .page-footer {
             text-align: center;
             border-top: 1px solid #1a1a1a;
@@ -492,14 +517,16 @@
             text-align: center;
         }
 
-        p {
-            font-size: 0.85rem;
+        .about-page-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
         }
     </style>
 </head>
 <body>
 <div class="app-scroll" id="appScroll">
-    <!-- Navigation -->
     <div class="navbar">
         <div class="logo"><h1>TRENDIFY</h1></div>
         <div class="nav-links">
@@ -511,7 +538,7 @@
         </div>
     </div>
 
-    <!-- HOME PAGE - 4 up and 4 down grid -->
+    <!-- HOME PAGE -->
     <div id="home-page" class="page active-page">
         <div class="page-content">
             <div class="hero">
@@ -545,12 +572,12 @@
 
     <!-- ABOUT PAGE -->
     <div id="about-page" class="page">
-        <div class="page-content">
-            <button class="back-button" id="aboutBackBtn"><i class="fas fa-arrow-left"></i></button>
+        <div class="page-content about-page-center">
             <div class="about-card">
                 <h2>The History of Trendify</h2>
-                <p>Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant and jogger tells a story of rebellion.</p>
-                <p style="margin-top: 0.8rem;">Today, Trendify is worn by artists, athletes and dreamers who refuse to blend in. Join the culture.</p>
+                <p>Born from the streets and built for the bold. Trendify started as a small creative collective and exploded into a global streetwear movement. We merge raw energy, urban aesthetics and uncompromising quality. Every hoodie, graphic tee, cargo pant and jogger tells a story of rebellion and self-expression.</p>
+                <p>Today, Trendify is worn by artists, athletes and dreamers who refuse to blend in. Join the culture and become part of a movement that defines what's next.</p>
+                <p style="margin-top: 1rem; color: #FFD700;">#TRENDIFY #StreetwearCulture</p>
             </div>
         </div>
         <div class="page-footer">COPYRIGHTS © 2026 TRENDIFY. ALL RIGHTS RESERVED</div>
@@ -618,26 +645,26 @@
 </div>
 
 <script>
-    // PRODUCTS
+    // PRODUCTS WITH IMAGES (using Font Awesome icons and emojis as product pictures)
     const menProducts = [
-        { id: 1, name: "Oversized Hoodie", price: 549, category: "tops", typeLabel: "Hoodie", gender: "men", icon: "fa-tshirt" },
-        { id: 2, name: "Cyberpunk Graphic Tee", price: 299, category: "tops", typeLabel: "Graphic Tee", gender: "men", icon: "fa-tshirt" },
-        { id: 3, name: "Cargo Pants", price: 599, category: "bottoms", typeLabel: "Cargos", gender: "men", icon: "fa-shopping-bag" },
-        { id: 4, name: "Fleece Joggers", price: 449, category: "bottoms", typeLabel: "Joggers", gender: "men", icon: "fa-shopping-bag" },
-        { id: 5, name: "Drop Shoulder Hoodie", price: 579, category: "tops", typeLabel: "Hoodie", gender: "men", icon: "fa-tshirt" },
-        { id: 6, name: "Skull Graphic Tee", price: 279, category: "tops", typeLabel: "Graphic Tee", gender: "men", icon: "fa-tshirt" },
-        { id: 7, name: "Utility Cargos", price: 629, category: "bottoms", typeLabel: "Cargos", gender: "men", icon: "fa-shopping-bag" }
+        { id: 1, name: "Oversized Hoodie", price: 549, category: "tops", typeLabel: "Hoodie", gender: "men", icon: "fa-tshirt", imageIcon: "fa-hoodie", emoji: "🧥" },
+        { id: 2, name: "Cyberpunk Graphic Tee", price: 299, category: "tops", typeLabel: "Graphic Tee", gender: "men", icon: "fa-tshirt", imageIcon: "fa-tshirt", emoji: "👕" },
+        { id: 3, name: "Cargo Pants", price: 599, category: "bottoms", typeLabel: "Cargos", gender: "men", icon: "fa-shopping-bag", imageIcon: "fa-shopping-bag", emoji: "👖" },
+        { id: 4, name: "Fleece Joggers", price: 449, category: "bottoms", typeLabel: "Joggers", gender: "men", icon: "fa-shopping-bag", imageIcon: "fa-shopping-bag", emoji: "👖" },
+        { id: 5, name: "Drop Shoulder Hoodie", price: 579, category: "tops", typeLabel: "Hoodie", gender: "men", icon: "fa-tshirt", imageIcon: "fa-hoodie", emoji: "🧥" },
+        { id: 6, name: "Skull Graphic Tee", price: 279, category: "tops", typeLabel: "Graphic Tee", gender: "men", icon: "fa-tshirt", imageIcon: "fa-tshirt", emoji: "👕" },
+        { id: 7, name: "Utility Cargos", price: 629, category: "bottoms", typeLabel: "Cargos", gender: "men", icon: "fa-shopping-bag", imageIcon: "fa-shopping-bag", emoji: "👖" }
     ];
 
     const womenProducts = [
-        { id: 101, name: "Cropped Hoodie", price: 479, category: "tops", typeLabel: "Cropped Hoodie", gender: "women", icon: "fa-female" },
-        { id: 102, name: "Y2K Graphic Tee", price: 289, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female" },
-        { id: 103, name: "Wide Cargo Pants", price: 579, category: "bottoms", typeLabel: "Cargos", gender: "women", icon: "fa-shopping-bag" },
-        { id: 104, name: "High-Waist Joggers", price: 459, category: "bottoms", typeLabel: "Joggers", gender: "women", icon: "fa-shopping-bag" },
-        { id: 105, name: "Zip-Up Hoodie", price: 529, category: "tops", typeLabel: "Zip Hoodie", gender: "women", icon: "fa-female" },
-        { id: 106, name: "Streetwear Tee", price: 269, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female" },
-        { id: 107, name: "Denim Jacket", price: 699, category: "tops", typeLabel: "Jacket", gender: "women", icon: "fa-female" },
-        { id: 108, name: "Puffer Vest", price: 649, category: "tops", typeLabel: "Outerwear", gender: "women", icon: "fa-female" }
+        { id: 101, name: "Cropped Hoodie", price: 479, category: "tops", typeLabel: "Cropped Hoodie", gender: "women", icon: "fa-female", imageIcon: "fa-hoodie", emoji: "🧥" },
+        { id: 102, name: "Y2K Graphic Tee", price: 289, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female", imageIcon: "fa-tshirt", emoji: "👕" },
+        { id: 103, name: "Wide Cargo Pants", price: 579, category: "bottoms", typeLabel: "Cargos", gender: "women", icon: "fa-shopping-bag", imageIcon: "fa-shopping-bag", emoji: "👖" },
+        { id: 104, name: "High-Waist Joggers", price: 459, category: "bottoms", typeLabel: "Joggers", gender: "women", icon: "fa-shopping-bag", imageIcon: "fa-shopping-bag", emoji: "👖" },
+        { id: 105, name: "Zip-Up Hoodie", price: 529, category: "tops", typeLabel: "Zip Hoodie", gender: "women", icon: "fa-female", imageIcon: "fa-hoodie", emoji: "🧥" },
+        { id: 106, name: "Streetwear Tee", price: 269, category: "tops", typeLabel: "Graphic Tee", gender: "women", icon: "fa-female", imageIcon: "fa-tshirt", emoji: "👕" },
+        { id: 107, name: "Denim Jacket", price: 699, category: "tops", typeLabel: "Jacket", gender: "women", icon: "fa-female", imageIcon: "fa-vest", emoji: "🧥" },
+        { id: 108, name: "Puffer Vest", price: 649, category: "tops", typeLabel: "Outerwear", gender: "women", icon: "fa-female", imageIcon: "fa-vest", emoji: "🧥" }
     ];
 
     let cart = [];
@@ -685,6 +712,19 @@
         showToast(`${product.name} added · P${product.price}`);
     }
 
+    function getProductImage(product) {
+        // Return appropriate icon/image based on product type
+        if (product.category === "tops") {
+            if (product.name.includes("Hoodie") || product.name.includes("Jacket") || product.name.includes("Zip") || product.name.includes("Puffer")) {
+                return `<i class="fas fa-vest" style="font-size: 3.5rem;"></i>`;
+            } else {
+                return `<i class="fas fa-tshirt" style="font-size: 3.5rem;"></i>`;
+            }
+        } else {
+            return `<i class="fas fa-shopping-bag" style="font-size: 3.5rem;"></i>`;
+        }
+    }
+
     function renderShop() {
         const source = currentGender === "men" ? menProducts : womenProducts;
         let filtered = source;
@@ -692,7 +732,9 @@
         const container = document.getElementById('shopProductsContainer');
         container.innerHTML = filtered.map(p => `
             <div class="product-card">
-                <div class="product-img"><i class="fas ${p.icon}"></i></div>
+                <div class="product-img">
+                    ${getProductImage(p)}
+                </div>
                 <div class="product-info">
                     <div class="product-title">${p.name}</div>
                     <div class="product-category">${p.typeLabel}</div>
@@ -726,21 +768,16 @@
     }
 
     function renderHomeFeatured() {
-        // 8 products - 4 up and 4 down in grid
         const freshPicks = [
-            menProducts[0],   // Oversized Hoodie
-            womenProducts[1], // Y2K Graphic Tee
-            menProducts[2],   // Cargo Pants
-            womenProducts[3], // High-Waist Joggers
-            menProducts[4],   // Drop Shoulder Hoodie
-            womenProducts[5], // Streetwear Tee
-            menProducts[6],   // Utility Cargos
-            womenProducts[6]  // Denim Jacket
+            menProducts[0], womenProducts[1], menProducts[2], womenProducts[3],
+            menProducts[4], womenProducts[5], menProducts[6], womenProducts[6]
         ];
         const homeGrid = document.getElementById('homeFeaturedGrid');
         homeGrid.innerHTML = freshPicks.map(p => `
             <div class="product-card">
-                <div class="product-img"><i class="fas ${p.icon}"></i></div>
+                <div class="product-img">
+                    ${getProductImage(p)}
+                </div>
                 <div class="product-info">
                     <div class="product-title">${p.name}</div>
                     <div class="product-price">P${p.price}</div>
