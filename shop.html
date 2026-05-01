@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Shop - Trendify</title>
+
 <!-- Bootstrap FIRST -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Your CSS AFTER -->
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary px-3">
   <div class="container-fluid">
 
-    <a class="navbar-brand fw-bold text-warning" href="index.html">
-      TRENDIFY
-    </a>
+    <a class="navbar-brand fw-bold text-warning" href="index.html">TRENDIFY</a>
 
     <button class="navbar-toggler" type="button"
       data-bs-toggle="collapse"
@@ -28,21 +29,10 @@
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto gap-2 gap-lg-3">
 
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active text-warning" href="shop.html">Shop</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active text-warning" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
       </ul>
     </div>
@@ -50,18 +40,31 @@
   </div>
 </nav>
 
-<div class="container py-5">
-  <h2>Shop</h2>
-  <div id="shopProductsContainer"></div>
-</div>
+<!-- MAIN CONTENT (IMPORTANT FOR FOOTER FIX) -->
+<main class="main-content">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="app.js"></script>
+  <div class="container py-5">
 
-</body>
-<footer class="footer text-center">
+    <h2 class="mb-3">Shop</h2>
+
+    <div id="shopProductsContainer" class="row"></div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER (MUST BE INSIDE BODY) -->
+<footer class="footer">
   <div class="container">
     <p>© 2026 All Rights Reserved · <span class="brand">TRENDIFY</span></p>
   </div>
 </footer>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YOUR APP -->
+<script src="app.js"></script>
+
+</body>
 </html>
