@@ -11,56 +11,40 @@
 </head>
 
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary px-3">
   <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-warning" href="index.html">TRENDIFY</a>
 
-    <a class="navbar-brand fw-bold text-warning" href="index.html">
-      TRENDIFY
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-lg-3">
-
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="shop.html">Shop</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active text-warning" href="about.html">About</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link active text-warning" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
+  </div>
+</nav>
 
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+  <div class="about-page-center">
+    <div class="about-card">
+      <h2>The History of Trendify</h2>
+      <p>Born from the streets...</p>
+    </div>
   </div>
- </nav>
-<h2>Contact Us</h2>
-<form id="contactForm">
-  <input type="text" placeholder="Name" required>
-  <input type="email" placeholder="Email" required>
-  <textarea placeholder="Message"></textarea>
-  <button type="submit">Send</button>
-</form>
-<script>
-document.getElementById("contactForm").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Message sent!");
-});
-</script>
- <div class="container py-5">
-  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer text-center">
+  <p>© 2026 All Rights Reserved · <span class="brand">TRENDIFY</span></p>
+</footer>
+
 </body>
 <footer class="footer text-center">
   <div class="container">
