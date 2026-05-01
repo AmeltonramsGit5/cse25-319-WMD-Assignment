@@ -11,17 +11,41 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary px-3">
+  <div class="container-fluid">
 
-<div class="navbar">
-  <h1>TRENDIFY</h1>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a class="navbar-brand fw-bold text-warning" href="index.html">
+      TRENDIFY
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-lg-3">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="shop.html">Shop</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active text-warning" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+
+      </ul>
+    </div>
+
   </div>
-</div>
-
+</nav>
 <h2>Shop</h2>
 <div id="shopProductsContainer"></div>
 
