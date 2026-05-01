@@ -11,44 +11,27 @@
 </head>
 
 <body>
+<h2>Contact Us</h2>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary px-3">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-warning" href="index.html">TRENDIFY</a>
+<form id="contactForm">
+  <input type="text" placeholder="Name" required>
+  <input type="email" placeholder="Email" required>
+  <textarea placeholder="Message"></textarea>
+  <button type="submit">Send</button>
+</form>
 
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto gap-3">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link active text-warning" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<script>
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Message sent!");
+});
+</script>
 
-<!-- MAIN CONTENT -->
-<main class="main-content">
-
-  <div class="about-page-center">
-    <div class="about-card">
-      <h2>The History of Trendify</h2>
-      <p>Born from the streets...</p>
-    </div>
-  </div>
-
+</body>
 </main>
 
 <!-- FOOTER -->
 <footer class="footer text-center">
   <p>© 2026 All Rights Reserved · <span class="brand">TRENDIFY</span></p>
-</footer>
-
-</body>
-<footer class="footer text-center">
-  <div class="container">
-    <p>© 2026 All Rights Reserved · <span class="brand">TRENDIFY</span></p>
-  </div>
 </footer>
 </html>
