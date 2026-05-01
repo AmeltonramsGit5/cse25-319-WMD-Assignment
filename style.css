@@ -1,0 +1,204 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+    background: #000;
+    color: #fff;
+
+    /* Sticky footer system */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MAIN CONTENT WRAPPER
+========================= */
+.main-content {
+    flex: 1;
+}
+
+/* =========================
+   NAVBAR CUSTOMIZATION
+========================= */
+.navbar {
+    background: #0a0a0a !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: #FFD700 !important;
+    transform: translateY(-2px);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* Active link */
+.nav-link.active {
+    color: #FFD700 !important;
+    font-weight: 600;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    border: 1px solid #222;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    font-weight: 800;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background: #FFD700;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.hero a:hover {
+    background: #ffb700;
+    transform: scale(1.05);
+}
+
+/* =========================
+   ABOUT CARD
+========================= */
+.about-page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.about-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-card h2 {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+button {
+    padding: 10px;
+    background: #FFD700;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #ffb700;
+}
+
+/* =========================
+   SHOP PRODUCTS GRID
+========================= */
+#shopProductsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Product card */
+.product-card {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700;
+}
+
+.product-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER (STICKS TO BOTTOM)
+========================= */
+.footer {
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+    padding: 15px;
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.footer .brand {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.text-gold {
+    color: #FFD700;
+}
