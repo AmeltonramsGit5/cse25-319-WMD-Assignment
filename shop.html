@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary px-3">
   <div class="container-fluid">
 
@@ -18,23 +19,25 @@
       TRENDIFY
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-lg-3">
+      <ul class="navbar-nav ms-auto gap-2 gap-lg-3">
 
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="shop.html">Shop</a>
+          <a class="nav-link active text-warning" href="shop.html">Shop</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active text-warning" href="about.html">About</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
 
         <li class="nav-item">
@@ -46,10 +49,14 @@
 
   </div>
 </nav>
-<h2>Shop</h2>
-<div id="shopProductsContainer"></div>
- <div class="container py-5">
-  </div>
+
+<div class="container py-5">
+  <h2>Shop</h2>
+  <div id="shopProductsContainer"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
