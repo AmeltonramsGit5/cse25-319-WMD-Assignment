@@ -92,11 +92,12 @@ body {
 /* =========================
    ABOUT CARD
 ========================= */
-.about-page-center {
+.about-center {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    padding: 20px;
 }
 
 .about-card {
