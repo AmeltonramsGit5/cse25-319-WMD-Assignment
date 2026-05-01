@@ -1,38 +1,46 @@
 /* =========================
    GLOBAL RESET
 ========================= */
-html, body {
+* {
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    /* remove forced black */
-    background: transparent;
-    color: inherit;
+    box-sizing: border-box;
 }
 
 /* =========================
-   MAIN CONTENT WRAPPER
+   BODY + LAYOUT SYSTEM
 ========================= */
+body {
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+
+    /* Light modern background */
+    background: #f8f9fa;
+    color: #111;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push footer down */
 .main-content {
     flex: 1;
 }
 
 /* =========================
-   NAVBAR CUSTOMIZATION
+   NAVBAR
 ========================= */
 .navbar {
-    background: #0a0a0a !important;
+    background: #111 !important;
+}
+
+.navbar-brand {
+    color: #FFD700 !important;
+    font-weight: 800;
 }
 
 .nav-link {
-    color: #fff !important;
+    color: #eaeaea !important;
     transition: 0.3s;
     font-size: 0.9rem;
 }
@@ -42,11 +50,6 @@ body {
     transform: translateY(-2px);
 }
 
-.navbar-brand {
-    letter-spacing: 1px;
-}
-
-/* Active link */
 .nav-link.active {
     color: #FFD700 !important;
     font-weight: 600;
@@ -56,27 +59,28 @@ body {
    HERO SECTION
 ========================= */
 .hero {
-    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #111, #1a1a1a);
-    border-radius: 20px;
-    margin: 30px auto;
+    border-radius: 18px;
+    text-align: center;
     max-width: 900px;
-    border: 1px solid #222;
+    margin: 40px auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .hero h2 {
     font-size: 2.5rem;
-    color: #FFD700;
     font-weight: 800;
+    color: #111;
 }
 
 .hero a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 25px;
     background: #FFD700;
-    color: #000;
+    color: #111;
     text-decoration: none;
     font-weight: 700;
     border-radius: 30px;
@@ -89,27 +93,27 @@ body {
 }
 
 /* =========================
-   ABOUT CARD
+   ABOUT PAGE
 ========================= */
-.about-center {
-    flex: 1;
+.about-page-center {
     display: flex;
-    justify-content: center;  /* horizontal center */
-    align-items: center;      /* vertical center */
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
 }
 
 .about-card {
-    background: #0f0f0f;
-    border: 1px solid #222;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 18px;
     max-width: 800px;
     text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 .about-card h2 {
-    color: #FFD700;
+    color: #111;
     margin-bottom: 15px;
 }
 
@@ -121,17 +125,25 @@ form {
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 input, textarea {
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #333;
-    background: #111;
-    color: #fff;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #111;
+    outline: none;
 }
 
+input:focus, textarea:focus {
+    border-color: #FFD700;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 button {
     padding: 10px;
     background: #FFD700;
@@ -139,6 +151,8 @@ button {
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
+    color: #111;
+    transition: 0.3s;
 }
 
 button:hover {
@@ -146,21 +160,23 @@ button:hover {
 }
 
 /* =========================
-   SHOP PRODUCTS GRID
+   SHOP GRID
 ========================= */
 #shopProductsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
-/* Product card */
+/* PRODUCT CARD */
 .product-card {
-    background: #0f0f0f;
-    border: 1px solid #222;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
     border-radius: 15px;
     padding: 15px;
     transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
 .product-card:hover {
@@ -169,26 +185,27 @@ button:hover {
 }
 
 .product-title {
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 5px;
+    color: #111;
 }
 
 .product-price {
-    color: #FFD700;
-    font-weight: bold;
+    color: #b8860b;
+    font-weight: 700;
 }
 
 /* =========================
-   FOOTER (STICKS TO BOTTOM)
+   FOOTER (STICKY)
 ========================= */
 .footer {
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-    padding: 15px;
+    background: #111;
+    color: #bbb;
     text-align: center;
+    padding: 15px;
     margin-top: auto;
+    border-top: 1px solid #222;
     font-size: 0.8rem;
-    color: #777;
 }
 
 .footer .brand {
