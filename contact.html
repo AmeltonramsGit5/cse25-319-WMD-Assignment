@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact - Trendify</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+  <h1>TRENDIFY</h1>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<h2>Contact Us</h2>
+
+<form id="contactForm">
+  <input type="text" placeholder="Name" required>
+  <input type="email" placeholder="Email" required>
+  <textarea placeholder="Message"></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Message sent!");
+});
+</script>
+
+</body>
+</html>
