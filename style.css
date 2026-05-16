@@ -120,12 +120,12 @@ background:#f5c518;
 font-size:30px;
 }
 
-footer{
-background:#0d0d0d;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:60px;
+.footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#777;
+    border-top:1px solid #222;
 }
 
 .footer .brand {
